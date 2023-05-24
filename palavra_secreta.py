@@ -48,4 +48,5 @@ while True:
         print(f'Você tentou {tentativas}x')
         break
 
-    print(palavra_formada)   
+    print(palavra_formada)    
+    
