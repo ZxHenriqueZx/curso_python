@@ -24,7 +24,7 @@ contrário disso:
 O primeiro dígito do CPF é 7
 """
 
-CPF = '746.824.890-70'
+CPF = '409.940.040-95'
 digitos, *resto = CPF.split('-')
 
 digitos = digitos.split('.')
