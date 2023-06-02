@@ -24,36 +24,64 @@ contrário disso:
 O primeiro dígito do CPF é 7
 """
 
-CPF = '409.940.040-95'
-digitos, *resto = CPF.split('-')
+#MINHA SOLUÇÃO
 
-digitos = digitos.split('.')
+# CPF = '238.656.668-41'
+# digitos, *resto = CPF.split('-')
 
-num_1, num_2, num_3 = digitos
-novo_digitos = num_1 + num_2 + num_3
+# digitos = digitos.split('.')
 
-
-soma = 0
-i = iter(range(10,2,-1)) 
+# num_1, num_2, num_3 = digitos
+# novo_digitos = num_1 + num_2 + num_3
 
 
-for num in novo_digitos:
-    num = int(num)
-    try:
-        multiplicador = next(i)
-    except StopIteration:
-        break
-    soma += num * multiplicador
+# soma = 0
+# i = iter(range(10,2,-1)) 
+
+
+# for num in novo_digitos:
+#     num = int(num)
+#     try:
+#         multiplicador = next(i)
+#     except StopIteration:
+#         break
+#     soma += num * multiplicador
     
 
-mult_por_dez = soma * 10 
-primeiro_digito_cpf = mult_por_dez % 11
+# mult_por_dez = soma * 10 
+# primeiro_digito_cpf = mult_por_dez % 11
 
-if primeiro_digito_cpf > 9:
-    primeiro_digito_cpf = 0
-else:
-    primeiro_digito_cpf = primeiro_digito_cpf
+# if primeiro_digito_cpf > 9:
+#     primeiro_digito_cpf = 0
+# else:
+#     primeiro_digito_cpf = primeiro_digito_cpf
 
-print(primeiro_digito_cpf)
+# print(primeiro_digito_cpf)
 
 
+
+cpf = '23865666841'
+numeros_1 = cpf[:9]
+numeros_2 = cpf[:10]
+contador_1 = 10
+contador_2 = 11
+soma_1 = 0 
+soma_2 = 0
+
+for num_1 in numeros_1:
+    num_1 = int(num_1)
+    soma_1 += num_1 * contador_1
+    contador_1 -= 1
+
+for num_2 in numeros_2:
+    num_2 = int(num_2)
+    soma_2 += num_2 * contador_2
+    contador_2 -= 1
+
+primeiro_digito = (soma_1 * 10) % 11
+segundo_digito = (soma_2 * 10) % 11
+
+primeiro_digito = primeiro_digito if primeiro_digito <= 9 else 0
+segundo_digito = segundo_digito if segundo_digito <= 9 else 0
+
+print(primeiro_digito, segundo_digito)
