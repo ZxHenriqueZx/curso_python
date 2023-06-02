@@ -60,9 +60,11 @@ O primeiro dígito do CPF é 7
 
 
 
-cpf = '23865666841'
+cpf = '238656668'.replace('.', '')\
+    .replace('-', '')\
+    .replace(' ', '')
+
 numeros_1 = cpf[:9]
-numeros_2 = cpf[:10]
 contador_1 = 10
 contador_2 = 11
 soma_1 = 0 
@@ -73,12 +75,15 @@ for num_1 in numeros_1:
     soma_1 += num_1 * contador_1
     contador_1 -= 1
 
+primeiro_digito = (soma_1 * 10) % 11
+numeros_2 = numeros_1 + str(primeiro_digito)
+
 for num_2 in numeros_2:
     num_2 = int(num_2)
     soma_2 += num_2 * contador_2
     contador_2 -= 1
 
-primeiro_digito = (soma_1 * 10) % 11
+
 segundo_digito = (soma_2 * 10) % 11
 
 primeiro_digito = primeiro_digito if primeiro_digito <= 9 else 0
