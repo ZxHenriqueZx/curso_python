@@ -2,16 +2,20 @@
 # Crie funções que duplicam, triplicam e quadruplicam
 # o número recebido como parâmetro.
 
-def duplicar(num):
-    return num * 2 
+# def duplicar(num):
+#     return num * 2 
 
-def triplicar(num):
-    return num * 3
+# def triplicar(num):
+#     return num * 3
 
-def quadruplicar(num):
-    return num * 4
+# def quadruplicar(num):
+#     return num * 4
 
-print(quadruplicar(10))
+# print(quadruplicar(10))
+# num1 = triplicar(8)
+# num2 = duplicar(22)
+# print(num1)
+# print(num2)
 
 # def multiplicar(numero):
 #     vezes_2 = numero * 2
@@ -22,3 +26,16 @@ print(quadruplicar(10))
 #           f'quadruplo de {numero} é {vezes_4}')
 
 # multiplicar(5)
+
+def criar_multiplicador(multiplicador):
+    def multiplicar(numero):
+        return numero * multiplicador
+
+    return multiplicar
+
+
+duplicar = criar_multiplicador(2)
+triplicar = criar_multiplicador(3)
+
+print(triplicar(10))
+print(duplicar(10)) 
