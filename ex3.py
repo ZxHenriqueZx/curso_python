@@ -18,15 +18,26 @@ perguntas = [
     }
 ]
 
+qtd_acerto = 0
 for pergunta in perguntas:
     print(pergunta['Pergunta'])
-    
+
     for i, op in enumerate(pergunta['Opções']):
         print(f'{i}){op}')
 
-    resposta_indice = int(input('Resposta: '))
-    
-    if pergunta['Opções'][resposta_indice] == pergunta['Resposta']:
-        print('certo')
-    
-    
+    try:
+        resposta_indice = int(input('Resposta: '))
+        if pergunta['Opções'][resposta_indice] == pergunta['Resposta']:
+            print('ACERTOU!!!')
+            qtd_acerto += 1
+        else:
+            print('ERROU!!!')
+        print(30*'-')
+    except ValueError:
+        print('Inválido')
+        print(30*'-')
+    except IndexError:
+        print('Inválido')
+        print(30*'-')
+
+print(f'Você acertou {qtd_acerto} de {len(pergunta)}')
