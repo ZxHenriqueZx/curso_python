@@ -29,42 +29,42 @@ lista_de_listas_de_inteiros = [
 ]
 
 #MINHA SOLUÇÃO
-# def duplicado():
-#     numeros_duplicados = []
-#     for lista_numeros in lista_de_listas_de_inteiros:   
-#         numeros_verificados = []
-#         for num in lista_numeros:
-#             if num in numeros_verificados:
-#                 numeros_duplicados.append(num)
-#                 break
+def duplicado():
+    numeros_duplicados = []
+    for lista_numeros in lista_de_listas_de_inteiros:   
+        numeros_verificados = []
+        for num in lista_numeros:
+            if num in numeros_verificados:
+                numeros_duplicados.append(num)
+                break
             
-#             numeros_verificados.append(num)
+            numeros_verificados.append(num)
 
-#             if numeros_verificados == lista_numeros:
-#                 numeros_duplicados.append(-1)
+            if numeros_verificados == lista_numeros:
+                numeros_duplicados.append(-1)
 
-#     for i,lista in enumerate(lista_de_listas_de_inteiros):
-#         print(lista, '->' ,numeros_duplicados[i])
+    for i,lista in enumerate(lista_de_listas_de_inteiros):
+        print(lista, '->' ,numeros_duplicados[i])
         
-# duplicado()
+duplicado()
 
 #SOLUÇÃO CURSO
-def encontra_primeiro_duplicado(lista_de_inteiros):
-    numeros_checados = set()
-    primeiro_duplicado = -1
+# def encontra_primeiro_duplicado(lista_de_inteiros):
+#     numeros_checados = set()
+#     primeiro_duplicado = -1
 
-    for numero in lista_de_inteiros:
-        if numero in numeros_checados:
-            primeiro_duplicado = numero
-            break
+#     for numero in lista_de_inteiros:
+#         if numero in numeros_checados:
+#             primeiro_duplicado = numero
+#             break
 
-        numeros_checados.add(numero)
+#         numeros_checados.add(numero)
 
-    return primeiro_duplicado
+#     return primeiro_duplicado
 
 
-for lista in lista_de_listas_de_inteiros:
-    print(
-        lista,
-        encontra_primeiro_duplicado(lista)
-    )
+# for lista in lista_de_listas_de_inteiros:
+#     print(
+#         lista,
+#         encontra_primeiro_duplicado(lista)
+#     )
