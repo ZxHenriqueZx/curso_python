@@ -1,0 +1,2 @@
+# Função lambda em Python
+
