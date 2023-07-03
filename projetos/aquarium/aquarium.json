@@ -4,6 +4,6 @@
              {"name": "Clarinha", "species": "guppy", "tank number": "18", "type": "fish"},
              {"name": "Brunão", "species": "lobster", "tank number": "21", "type": "shellfish"},
              {"name": "Luisito", "species": "clownfish", "tank number": "12", "type": "fish"},
-             {"name": "Jamal", "species": "grenn turtle", "tank number": "11", "type": "fish"}
+             {"name": "Jamal", "species": "grenn turtle", "tank number": "11", "type": "turtle"}
             ]
 }
