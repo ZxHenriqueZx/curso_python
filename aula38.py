@@ -9,5 +9,8 @@
 # nos caminhos de sys.path
 
 import aula37
+from aula37 import nome
 
-print(__name__)
+print(aula37.nome)
+#print(__name__)
+print(nome)

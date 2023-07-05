@@ -36,8 +36,11 @@
 # má prática - from nome_modulo import *
 # Vantagens: importa tudo de um módulo
 # Desvantagens: importa tudo de um módulo
+
+# da aula38.py
 # from sys import exit, platform
-print(__name__)
-print('sou a aula37')
+nome = 'Luis'
+#print(__name__)
+#print('sou a aula37')
 # print(platform)
 # exit()
