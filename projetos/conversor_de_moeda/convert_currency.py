@@ -38,7 +38,5 @@ class ConvertCurrency:
         rate = data[f'{initial_currency}_{end_currency}']
         new_value = round(rate * amount, 2)
 
-        return new_value
+        return f'{end_currency}: {new_value}'
             
-        
-
