@@ -11,6 +11,10 @@ def decrypt():
 
 
 def main_screen():
+    global screen
+    global text1
+    global code
+
     screen = Tk()
     screen.geometry('450x450')
     screen.resizable(True,True)
