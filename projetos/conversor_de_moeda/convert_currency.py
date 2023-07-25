@@ -5,7 +5,6 @@ class ConvertCurrency:
         self.url_base = "https://free.currconv.com"
         self.api_key = api_key
         self.currencies = self.get_currencies()
-    
     def get_currencies(self):
         endpoint = f"/api/v7/currencies?apiKey={self.api_key}"
         url = self.url_base + endpoint
@@ -28,7 +27,6 @@ class ConvertCurrency:
         if len(data) == 0:
             print('Moedas Inválidas!!')
             return
-        
         try:
             amount = float(amount)
         except ValueError:
@@ -39,4 +37,4 @@ class ConvertCurrency:
         new_value = round(rate * amount, 2)
 
         return f'{end_currency}: {new_value}'
-            
+

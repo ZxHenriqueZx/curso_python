@@ -18,18 +18,15 @@ while True:
     if option_user not in range(1,3):
         print('Escreva uma das opções disponíveis!!')
         continue
-    
     def converter(moeda_um, moeda_dois, amount=1):
         print(conv_curr.transform_currency(moeda_um, amount, moeda_dois))
 
     if option_user == 1:
         conv_curr.show()
-    
     if option_user == 2:
         moe_ini = input('Escreva a primeira moeda(ex:USD): ')
         moe_fin = input('Escreva a segunda moeda(ex:BRL): ')
         valor = float(input('Escreva o valor a ser convertido: '))
         converter(moe_ini, moe_fin, valor)
-        
 
 #print(conv_curr.transform_currency('USD', 50, 'BRL'))
