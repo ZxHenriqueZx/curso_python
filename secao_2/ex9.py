@@ -8,25 +8,41 @@
 # desfazer = [] -> Refazer ['caminhar', 'fazer café']
 # refazer = todo ['fazer café']
 # refazer = todo ['fazer café', 'caminhar']
+import os
 
 list_global = []
 list_history = []
+sair = False
 options = ['refazer', 'desfazer', 'clear', 'sair']
 
 def input_user():
-    print('---Lista de Tarefas---')
-    print(f'comandos: {options[0]}, {options[1]}, {options[2]}, {options[3]}')
+    global sair
     input_user = input('Escreva uma tarefa ou comando: ')
+    if input_user == 'sair':
+        sair = True
     return input_user
 
 def list_manager(input_user):
     if input_user not in options:
         list_global.append(input_user)
+    elif input_user == 'desfazer':
+        if list_global == []:
+            print('Nada para desfazer')
+            return
+        list_history.append(list_global.pop())
+    elif input_user == 'refazer':
+        if list_history == []:
+            print('Nada para refazer')
+            return
+        list_global.append(list_history.pop(0))
+    elif input_user == 'clear':
+        os.system('clear')
 
-while input_user != 'sair':
+while sair == False:
     print(30 * '-')
+    print('---Lista de Tarefas---')
+    print(f'comandos: {options[0]}, {options[1]}, {options[2]}, {options[3]}')
     list_manager(input_user())
-    print(list_global)
-
-
+    print(30*'-')
+    print(f'Lista:', *list_global, sep='\n')
 
