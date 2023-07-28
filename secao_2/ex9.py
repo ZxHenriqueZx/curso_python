@@ -9,6 +9,7 @@
 # refazer = todo ['fazer café']
 # refazer = todo ['fazer café', 'caminhar']
 import os
+import json
 
 list_global = []
 list_history = []
@@ -39,10 +40,14 @@ def list_manager(input_user):
         os.system('clear')
 
 while sair == False:
-    print(30 * '-')
+        print(30 * '-')
     print('---Lista de Tarefas---')
     print(f'comandos: {options[0]}, {options[1]}, {options[2]}, {options[3]}')
     list_manager(input_user())
     print(30*'-')
     print(f'Lista:', *list_global, sep='\n')
+
+with open('ex9.json', 'w') as arquivo:
+    json.dump(list_global, arquivo, indent=2)
+
 
