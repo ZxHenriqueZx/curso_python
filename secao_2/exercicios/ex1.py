@@ -12,4 +12,4 @@ while True:
         print('A nota esta inválida!!')
         print(30 * '-')
         continue
-    
+
