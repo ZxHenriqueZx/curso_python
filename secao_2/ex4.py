@@ -31,13 +31,13 @@ lista_de_listas_de_inteiros = [
 #MINHA SOLUÇÃO
 def duplicado():
     numeros_duplicados = []
-    for lista_numeros in lista_de_listas_de_inteiros:   
+    for lista_numeros in lista_de_listas_de_inteiros:
         numeros_verificados = []
         for num in lista_numeros:
             if num in numeros_verificados:
                 numeros_duplicados.append(num)
                 break
-            
+
             numeros_verificados.append(num)
 
             if numeros_verificados == lista_numeros:
@@ -45,7 +45,7 @@ def duplicado():
 
     for i,lista in enumerate(lista_de_listas_de_inteiros):
         print(lista, '->' ,numeros_duplicados[i])
-        
+
 duplicado()
 
 #SOLUÇÃO CURSO
