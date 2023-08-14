@@ -4,3 +4,5 @@ Success: Deu certo LogFileMixin
 Erro: erro do main LogFileMixin
 Erro: erro do main LogFileMixin
 Success: aqui é do main LogFileMixin
+Success: Iphone 15 está ligado SmartFone
+Success: Galaxy S20 está ligado SmartFone

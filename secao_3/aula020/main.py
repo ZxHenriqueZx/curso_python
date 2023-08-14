@@ -1,8 +1,4 @@
-from log import LogPrintMixin, LogFileMixin
+from eletronico import SmartFone
 
-lp = LogPrintMixin()
-lf = LogFileMixin()
-
-lf.log_error('erro do main')
-lf.log_success('aqui é do main')
-
+iphone = SmartFone('Iphone 15')
+galax_s20 = SmartFone('Galaxy S20')
