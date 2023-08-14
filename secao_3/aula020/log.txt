@@ -1,0 +1,6 @@
+Success: Deu certo LogFileMixin
+Erro: Deu erro LogFileMixin
+Success: Deu certo LogFileMixin
+Erro: erro do main LogFileMixin
+Erro: erro do main LogFileMixin
+Success: aqui é do main LogFileMixin
