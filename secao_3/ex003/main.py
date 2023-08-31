@@ -32,11 +32,4 @@ Só será possível sacar se passar na autenticação do banco (descrita acima)
 Banco autentica por um método.
 """
 
-class Conta:
-    ...
 
-class ContaPoupanca(Conta):
-    ...
-
-class ContaCorrente(Conta):
-    ...
