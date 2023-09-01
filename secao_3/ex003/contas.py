@@ -29,7 +29,7 @@ class ContaCorrente(Conta):
             self.noti(f'Sacado: -R${valor}')
 
     def __repr__(self):
-        return 'Conta Corrente'
+        return f'Conta Corrente - Agência: {self._agencia}'
 
 class ContaPoupanca(Conta):
     def __init__(self, agencia, num, saldo):
@@ -42,6 +42,9 @@ class ContaPoupanca(Conta):
         else:
             self._saldo -= valor
             self.noti(f'Sacado: -R${valor}')
+
+    def __repr__(self):
+        return f'Conta Poupança - Agência: {self._agencia}'
 
 if __name__ == '__main__':
     c1 = ContaCorrente(8562, 12583312, 250)
