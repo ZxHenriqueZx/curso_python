@@ -3,20 +3,13 @@ import contas
 
 
 class Banco:
-    def __init__(self):
-        self.clientes = []
-        self.contas = []
+    def __init__(self, nome, agencias, clientes):
+        self.nome = nome
+        self.agencias = agencias
+        self.clientes = clientes
 
-    def get_cliente(self, cliente):
-        self.clientes.append(cliente)
-
-    def get_contas(self, conta):
-        self.contas.append(conta)
+    def autenticar(self, agencias, clientes):
+        ...
 
 if __name__ == '__main__':
-    conta1 = contas.ContaCorrente(2564, 856425, 100)
-    conta2 = contas.ContaPoupanca(1544, 8456923, 500)
-    luis = pessoa_cliente.Cliente('Luis', 18, conta1)
-    pedro = pessoa_cliente.Cliente('Pedro', 25, conta2)
-    itau = Banco()
-
+    ...

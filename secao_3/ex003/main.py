@@ -31,6 +31,18 @@ Banco será responsável autenticar o cliente e as contas da seguinte maneira:
 Só será possível sacar se passar na autenticação do banco (descrita acima)
 Banco autentica por um método.
 """
+from contas import ContaCorrente, ContaPoupanca
+from pessoa_cliente import Cliente
+from banco import Banco
 
+if __name__ == '__main__':
+    conta1 = ContaCorrente(1574, 58426584, 1000)
+    conta2 = ContaPoupanca(5658, 85691232, 500)
+    conta3 = ContaCorrente(5897, 23156485, 100)
 
+    cliente1 = Cliente('Luis', 18)
+    cliente2 = Cliente('Pedro', 22)
+    cliente3 = Cliente('João', 30)
+
+    banco1 = Banco('Itau', [1574, 5897], [cliente1, cliente2, cliente3])
 

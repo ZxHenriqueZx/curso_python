@@ -47,6 +47,4 @@ class ContaPoupanca(Conta):
         return f'Conta Poupança - Agência: {self._agencia}'
 
 if __name__ == '__main__':
-    c1 = ContaCorrente(8562, 12583312, 250)
-    c2 = ContaPoupanca(7621, 58423658, 1000)
-
+    ...
