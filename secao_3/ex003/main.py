@@ -41,8 +41,14 @@ if __name__ == '__main__':
     conta3 = ContaCorrente(5897, 23156485, 100)
 
     cliente1 = Cliente('Luis', 18)
+    cliente1.conta = conta1
     cliente2 = Cliente('Pedro', 22)
+    cliente2.conta = conta2
     cliente3 = Cliente('João', 30)
+    cliente3.conta = conta3
+    cliente4 = Cliente('Bruno', 25)
 
-    banco1 = Banco('Itau', [1574, 5897], [cliente1, cliente2, cliente3])
-
+    banco1 = Banco('Itau',[1574, 5897],[cliente1,cliente2,cliente3],[conta1,conta2])
+    banco1.autenticar([1574, 5658], [cliente1, cliente3, cliente4], [conta2,conta3])
+    print()
+    banco1.autenticar_conta([cliente1, cliente2, cliente3, cliente4])
