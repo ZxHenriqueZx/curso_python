@@ -1,0 +1,9 @@
+{
+    "nome": "Luis",
+    "sobrenome": "Henrique",
+    "idade": 18,
+    "altura": 1.80,
+    "endereços": {"casa": "Rua São Pedro, 557, Recanto Verde do Sol"},
+    "dinheiro": null
+
+}
