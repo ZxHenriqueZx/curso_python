@@ -28,3 +28,4 @@ if top_jobs_heading is not None:
     if article is not None:
         for p in article.select('p'):
             print(re.sub(r'\s{1,}', ' ', p.text).strip())
+
