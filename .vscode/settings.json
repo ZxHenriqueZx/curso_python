@@ -1,11 +1,11 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
   "workbench.startupEditor": "none",
   "explorer.compactFolders": false,
   "editor.fontSize": 15,
   "terminal.integrated.fontSize": 15,
   "editor.rulers": [80, 120],
-  "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.iconTheme": "material-icon-theme",
   "code-runner.executorMap": {
     "python": "clear ; python -u"
