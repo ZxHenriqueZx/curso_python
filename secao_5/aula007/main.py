@@ -1,4 +1,4 @@
-from PySide6.QtCore import QObject, Signal, Slot, QThread
+from PySide6.QtCore import QObject, Signal, QThread
 from PySide6.QtWidgets import QApplication, QWidget
 from workerui_code import Ui_Form
 import sys
@@ -9,7 +9,7 @@ class Worker1(QObject):
     progressed = Signal(str)
     finished = Signal(str)
 
-    def run(self):
+    def doWork(self):
         value = '0'
         self.started.emit(value)
         for i in range(5):
@@ -23,8 +23,8 @@ class MyWidget(QWidget, Ui_Form):
         super().__init__(parent)
         self.setupUi(self)
 
-        self.pushButton.clicked.connect(self.hard_worker1)
-        #self.pushButton_2.clicked.connect(self.hard_worker2)
+        self.pushButton.clicked.connect(self.hard_worker1) 
+        self.pushButton_2.clicked.connect(self.hard_worker2) 
 
     def hard_worker1(self):
         self._worker = Worker1()
@@ -37,11 +37,11 @@ class MyWidget(QWidget, Ui_Form):
         worker.moveToThread(thread)
 
         #Run
-        thread.started.connect(worker.run)
+        thread.started.connect(worker.doWork)
         worker.finished.connect(thread.quit)
 
-        thread.finished.connect(self.deleteLater)
-        worker.finished.connect(self.deleteLater)
+        thread.finished.connect(thread.deleteLater)
+        worker.finished.connect(worker.deleteLater)
 
         worker.started.connect(self.worker1_start)
         worker.progressed.connect(self.worker1_progress)
@@ -50,18 +50,47 @@ class MyWidget(QWidget, Ui_Form):
         thread.start()
 
     def worker1_start(self, value):
-        self.label.setText(value)
         self.pushButton.setDisabled(True)
+        self.label.setText(value)
 
     def worker1_progress(self, value):
         self.label.setText(value)
 
     def worker1_finish(self):
         self.pushButton.setDisabled(False)
-        print('acabou')
+        self.label.setText('acabou')
 
     def hard_worker2(self):
-        self.label_2.setText('clicado2')
+        self._worker2 = Worker1()
+        self._thread2 = QThread()
+
+        worker2 = self._worker2
+        thread2 = self._thread2
+
+        worker2.moveToThread(thread2)
+        
+        thread2.started.connect(worker2.doWork)
+        worker2.finished.connect(thread2.quit)
+
+        thread2.finished.connect(thread2.deleteLater)
+        worker2.finished.connect(worker2.deleteLater)
+
+        worker2.started.connect(self.worker2_start)
+        worker2.progressed.connect(self.worker2_progress)
+        worker2.finished.connect(self.worker2_finish)
+
+        thread2.start()
+
+    def worker2_start(self, value):
+        self.pushButton_2.setDisabled(True)
+        self.label_2.setText(value)
+
+    def worker2_progress(self, value):
+        self.label_2.setText(value)
+
+    def worker2_finish(self):
+        self.pushButton_2.setDisabled(False)
+        self.label_2.setText('acabou')
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
