@@ -25,11 +25,18 @@ connection.commit()
 sql = (
     'INSERT INTO customers (name, weight) '
     'VALUES '
-    '(?, ?)'
+    '(:name, :weight)'
 )
 
 #cursor.execute(sql, ['Luis', 1.80])
-cursor.executemany(sql, (('Luis', 1.80), ('Pedro', 1.98), ('Maria', 1.60)))
+#cursor.executemany(sql, (('Luis', 1.80), ('Pedro', 1.98), ('Maria', 1.60)))
+#cursor.execute(sql, {'name': 'Luis', 'weight': 1.80})
+cursor.executemany(sql,
+     ({'name':'Luis Henrique', 'weight': 12},
+     {'name':'Pedro', 'weight': 10},
+     {'name':'Gabriel', 'weight': 25},
+))
+
 connection.commit()
 
 cursor.close()
