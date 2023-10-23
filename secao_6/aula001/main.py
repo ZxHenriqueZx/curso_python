@@ -28,7 +28,8 @@ sql = (
     '(?, ?)'
 )
 
-cursor.execute(sql, ['Luis', 1.80])
+#cursor.execute(sql, ['Luis', 1.80])
+cursor.executemany(sql, (('Luis', 1.80), ('Pedro', 1.98), ('Maria', 1.60)))
 connection.commit()
 
 cursor.close()
