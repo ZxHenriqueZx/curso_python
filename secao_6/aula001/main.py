@@ -13,11 +13,6 @@ cursor.execute(
 connection.commit()
 
 cursor.execute(
-    'DELETE FROM sqlite_sequence WHERE name="{customers}"'
-)
-connection.commit()
-
-cursor.execute(
     'CREATE TABLE IF NOT EXISTS customers'    
     '('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
@@ -27,11 +22,13 @@ cursor.execute(
 )
 connection.commit()
 
-cursor.execute(
-    'INSERT INTO customers (id, name, weight) '
-    'VALUES (NULL, "Pedro", 2.80),'
-    '(NULL, "Luis Henrique", 1.80)'
+sql = (
+    'INSERT INTO customers (name, weight) '
+    'VALUES '
+    '(?, ?)'
 )
+
+cursor.execute(sql, ['Luis', 1.80])
 connection.commit()
 
 cursor.close()
