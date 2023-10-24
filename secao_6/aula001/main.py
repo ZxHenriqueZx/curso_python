@@ -46,6 +46,19 @@ if __name__ == '__main__':
     cursor.execute('DELETE FROM customers WHERE id = "2"')
     connection.commit()
 
+    cursor.execute(
+        'UPDATE customers '
+        'SET name="Mudei", weight=100.10 '
+        'WHERE id="3"'
+    )
+    connection.commit()
+
+    cursor.execute(
+        'INSERT INTO customers (name, weight) '
+        'VALUES ("Cuca Beludo", 50.94)'
+    )
+    connection.commit()
+
     cursor.execute('SELECT * FROM customers')
     connection.commit()
 
