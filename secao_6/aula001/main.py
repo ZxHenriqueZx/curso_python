@@ -12,6 +12,9 @@ cursor.execute(
 )
 connection.commit()
 
+cursor.execute('DELETE FROM sqlite_sequence WHERE name="customers"')
+connection.commit()
+
 cursor.execute(
     'CREATE TABLE IF NOT EXISTS customers'    
     '('
@@ -36,9 +39,20 @@ cursor.executemany(sql,
      {'name':'Pedro', 'weight': 10},
      {'name':'Gabriel', 'weight': 25},
 ))
-
 connection.commit()
 
-cursor.close()
-connection.close()
+
+if __name__ == '__main__':
+    cursor.execute('DELETE FROM customers WHERE id = "2"')
+    connection.commit()
+
+    cursor.execute('SELECT * FROM customers')
+    connection.commit()
+
+    for row in cursor.fetchall():
+        _id, name, weight = row
+        print(_id, name, weight) 
+
+    cursor.close()
+    connection.close()    
 
