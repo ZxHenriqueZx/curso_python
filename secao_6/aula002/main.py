@@ -24,7 +24,6 @@ with connection:
             'idade INT NOT NULL, '
             'PRIMARY KEY (id)'
             ')'
-
         )
 
 
