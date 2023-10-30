@@ -53,3 +53,21 @@ with connection:
         cursor.execute(sql, data)    
         connection.commit()
 
+    with connection.cursor() as cursor:
+        sql = (
+            f'INSERT INTO {TABLE_NAME} '
+            '(nome, idade) VALUES (%(nome)s, %(idade)s) '
+        )
+
+        print(sql)
+
+        data2 = (
+            {'nome':'Jamal', 'idade': 52},
+            {'nome':'Joana', 'idade': 12},
+            {'nome':'Kevin', 'idade': 18},
+            {'nome':'Cleber', 'idade': 58},
+        )
+
+        cursor.executemany(sql, data2)    
+        connection.commit()
+
