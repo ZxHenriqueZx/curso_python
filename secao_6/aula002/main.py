@@ -66,17 +66,21 @@ with connection:
             {'nome':'Joana', 'idade': 12},
             {'nome':'Kevin', 'idade': 18},
             {'nome':'Cleber', 'idade': 58},
+            {'nome':'Mariza', 'idade': 13},
         )
 
         cursor.executemany(sql, data2)    
         connection.commit()
 
     with connection.cursor() as cursor:
+        consult1 = input('Digite um id: ')
+        consult2 = input('Digite outro id: ')
         sql = (
-            f'SELECT * FROM {TABLE_NAME}'
+            f'SELECT * FROM {TABLE_NAME} '
+            f'WHERE id >= %s AND id <= %s'
         )
 
-        cursor.execute(sql)
+        cursor.execute(sql, (consult1, consult2))
 
         data3 = cursor.fetchall()
 
