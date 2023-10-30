@@ -36,7 +36,7 @@ with connection:
             '(nome, idade) VALUES (%s, %s) '
         )
 
-        print(sql)
+        #print(sql)
 
         cursor.execute(sql, ('Pedro', 18))    
         connection.commit()
@@ -47,7 +47,7 @@ with connection:
             '(nome, idade) VALUES (%(nome)s, %(idade)s) '
         )
 
-        print(sql)
+        #print(sql)
 
         data = {"nome": "João", "idade": 52}
         cursor.execute(sql, data)    
@@ -59,7 +59,7 @@ with connection:
             '(nome, idade) VALUES (%(nome)s, %(idade)s) '
         )
 
-        print(sql)
+        #print(sql)
 
         data2 = (
             {'nome':'Jamal', 'idade': 52},
@@ -70,4 +70,16 @@ with connection:
 
         cursor.executemany(sql, data2)    
         connection.commit()
+
+    with connection.cursor() as cursor:
+        sql = (
+            f'SELECT * FROM {TABLE_NAME}'
+        )
+
+        cursor.execute(sql)
+
+        data3 = cursor.fetchall()
+
+        for row in data3:
+            print(row)
 
