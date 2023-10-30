@@ -73,8 +73,8 @@ with connection:
         connection.commit()
 
     with connection.cursor() as cursor:
-        consult1 = input('Digite um id: ')
-        consult2 = input('Digite outro id: ')
+        consult1 = 1
+        consult2 = 4
         sql = (
             f'SELECT * FROM {TABLE_NAME} '
             f'WHERE id >= %s AND id <= %s'
@@ -84,6 +84,20 @@ with connection:
 
         data3 = cursor.fetchall()
 
-        for row in data3:
+        #for row in data3:
+        #    print(row)
+
+    with connection.cursor() as cursor:
+        sql = (
+            f'DELETE FROM {TABLE_NAME} '
+            'WHERE id = 3'
+        )
+        cursor.execute(sql)
+        connection.commit()
+
+        sql2 = (f'SELECT * FROM {TABLE_NAME}')
+        cursor.execute(sql2)
+
+        for row in cursor.fetchall():
             print(row)
 
