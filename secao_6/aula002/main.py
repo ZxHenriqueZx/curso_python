@@ -116,6 +116,13 @@ with connection:
         sql2 = (f'SELECT * FROM {TABLE_NAME}')
         cursor.execute(sql2)
 
+        print('For 1:')
+        for row in cursor.fetchall():
+            print(row)
+
+        print()
+        print('For 2:')
+        cursor.scroll(0, 'absolute')
         for row in cursor.fetchall():
             print(row)
 
