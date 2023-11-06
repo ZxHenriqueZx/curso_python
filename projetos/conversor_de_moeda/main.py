@@ -1,6 +1,6 @@
 from convert_currency import ConvertCurrency
 
-api_key = '75a93ef9071673d199a9'
+api_key = '98aad097f929847bbeb1'
 conv_curr = ConvertCurrency(api_key)
 
 print('===CONVERSOR DE MOEDAS====')
