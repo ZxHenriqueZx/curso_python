@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 def blog(request):
     context = {
-        'text': 'Hello Blog!!',
+        #'text': 'Hello Blog!!',
         'title': 'Blog',
         'posts': posts
     }
