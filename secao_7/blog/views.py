@@ -1,6 +1,8 @@
 from blog.data_posts import posts
 from django.shortcuts import render
 
+from django.http import Http404
+
 # Create your views here.
 def blog(request):
     context = {
@@ -22,6 +24,9 @@ def post(request, post_id):
         if post['id'] == post_id:
             post_single = post
             break
+
+    if post_single == None:
+        raise Http404('Post não existe')
 
     context = {
         'post': post_single,
