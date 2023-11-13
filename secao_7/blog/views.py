@@ -15,14 +15,22 @@ def blog(request):
         context,
     )
 
-def post(request, id):
+def post(request, post_id):
+    post_single = None
+
+    for post in posts:
+        if post['id'] == post_id:
+            post_single = post
+            break
+
     context = {
-        'posts': posts,
+        'post': post_single,
+        'title': post_single['title'],
     }
 
     return render(
         request,
-        'blog/index.html',
+        'blog/post.html',
         context,
     )
 
